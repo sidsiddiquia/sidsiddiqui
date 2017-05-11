@@ -1592,3 +1592,6 @@
 		body.is-loading #footer {
 			opacity: 0;
 		}
+.img-circle {
+    border-radius: 50%;
+}
