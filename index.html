@@ -44,31 +44,38 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								
+<!DOCTYPE html>
+<html>
+  <head>
     <style>
-      #map {
-        height: 100px;
-        width: 100%;
-       }
+#map {
+  height: 100px;
+  width: 100%;
+ }
     </style>
   </head>
-  <body>
-    <div id="map"></div>
+ <body>
+<div id="map">
     <script>
-      function initMap() {
-        var uluru = {lat: 41.8781, lng: -87.6298};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: chicago 
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx5AV2MzJrYqLNy6kDwD0YNAtXIPk5i_s&callback=initMap">
-	  </script></br>			
+function initMap() {
+  var uluru = {
+    lat: 41.8781,
+    lng: -87.6298
+  };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
+</script>
+</body>
+</html>		
 							
 								
 								
