@@ -43,6 +43,42 @@
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">About</h2>
+								
+							  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -41.8781, lng: 87.6298};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02RWqR7EEWTt700IRU3HJr0t0NH7rqek&callback=initMap">
+    </script>
+								
+								
+							
+								
+								
+								
+								
+								
 								<p style="font-size:13p">
 								<b>Sid Siddiqui</b> is a current master's degree candidate at the <b>University of Illinois at Urbana-Champaign</b> studying <b>Business Administration</b>. He has previously completed his Bachelor's degree in the <b>Science of Nursing</b> from <b>Purdue University</b> as well as holds multiple assoicate's degrees in Applied Science, Arts, and Science respectively. His professional experience expands into the fields of healthcare delivery and administration, with special regards to point of care and supervisory roles.</p>
 					 			Apart from healthcare, Sid has multiple interests in economics and finance, specifically that of digital currency and the future impact it can hold on financial landscapes.</p>
