@@ -44,46 +44,32 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								
-
-  <style type="text/css">
-    #map {
-  height: 100px;
-  width: 100%;
-}
-
-  </style>
-
-  <title>Map with Marker</title>
-
-  
-</head>
-
-<body>
-  <div id="map">
-</div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
-</script>
-<script type='text/javascript'>//<![CDATA[
-
-function initMap() {
-  var uluru = {
-    lat: 41.8781,
-    lng: -87.6298
-  };
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
-    center: uluru
-  });
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
-}
-
-//]]> 
-
-</script>
-							
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 41.8781, lng: -87.6298};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhW8V2xAhVko3nP8V53-IR0E4c60MZhZY&callback=initMap">
+    </script>					
 								
 								
 								
