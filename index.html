@@ -59,10 +59,10 @@
         var chicago = {lat: -41.878, lng: 87.629};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2,
-          center: chicago
+          center: {lat: -41.87, lng: 87.62};
         });
         var marker = new google.maps.Marker({
-          position: chicago,
+          position: {lat: -41.87, lng: 87.62},
           map: map
         });
       }
