@@ -44,14 +44,31 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCK_2bv814hvCkRpDmTxrX5Y5D6bMi9hUs
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
-</iframe>
-							
+    <style>
+       #map {
+        height: 100px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -41.8781, lng: 87.6298};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: chicago
+        });
+        var marker = new google.maps.Marker({
+          position: chicago,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK_2bv814hvCkRpDmTxrX5Y5D6bMi9hUs&callback=initMap">
+    </script>				
 							
 								
 								
