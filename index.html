@@ -44,13 +44,15 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								
-								
-								
-								  <style type="text/css">
+				
+  
+
+  
+
+  <style type="text/css">
 #map {
   height: 100%;
 }
-/* Optional: Makes the sample page fill the window. */
 html, body {
   height: 50%;
   margin: 0;
@@ -65,14 +67,9 @@ html, body {
 
 <body>
   <div id="map"></div>
-	<script async defer
+<script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafl2BvrGbSEuy5XDoWA2LL1u9ZxJVCA4	&callback=initMap">
 </script>
-  
-
-
-
-
 <script type='text/javascript'>//<![CDATA[
 
 function initMap() {
@@ -92,12 +89,23 @@ function initMap() {
 //]]> 
 
 </script>
-								
-								
-								
-								
-								
-								
+
+  <script>
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "dtbb9ys6"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+							
+
+
+				
 								
 								
 								
