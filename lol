@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>line05x5d - csh.bz - chris shier</title>
+    <!-- chris shier, noisia@gmail.com, http://csh.bz -->
+    <!-- thank you timb -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <link rel="stylesheet" type="text/css" href="./css/pair.css">
+    <link rel="icon" href="http://csh.bz/favicon.ico"/>
+    <link rel="image_src" href="./img/05x5b02.png"/>
+    <meta property="og:image" content="./img/05x5b02.png"/>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<canvas id="canvas">try this in a browser that supports the canvas tag</canvas>
+</body>
+<script type="text/javascript" src="./js/window.js"></script>
+<script type="text/javascript" src="./js/mouse.js"></script>
+<script type="text/javascript" src="./js/canvas.js"></script>
+<script type="text/javascript">
+
+function clear(){
+  ctx.clearRect(0,0,cw,ch);
+}
+function touchClear(){
+  window.ontouchstart = clear;
+}
+// this is here because all my js was being cached forever and i aint got no version control okay?
+var hue;
+function linee(width) {
+  ctx.lineCap = "round";
+  ctx.lineJoin = "miter";
+  ctx.lineWidth = width||2;
+  ctx.beginPath();
+  for ( var i = 64; i > 0; i--) {
+    ctx.moveTo(Mouse.xA[i-1],Mouse.yA[i-1]);
+    ctx.lineTo(Mouse.xA[i],Mouse.yA[i]);
+      var a = (Mouse.xA[i] - Mouse.xA[i-1])||1;
+      var b = (Mouse.yA[i] - Mouse.yA[i-1])||1;
+      hue = (-time/9) + (i*2) + (hypotenuse(a,b)*6) + aRandomNumber;
+      ctx.strokeStyle = hsla(hue,100,50,1);
+      ctx.lineWidth = Math.max(width - (hypotenuse(a,b)/2), 2);
+    ctx.stroke();
+    ctx.beginPath();
+  }
+}
+
+function animloop() {
+  window.requestAnimFrame(animloop);
+  imageSmoothing(false);
+  timer();
+  
+  if (Mouse.clicks % 2 == 1 ){
+    decay2(0,0,2,0);
+    decay2(0, 0, -8, Math.PI + Mouse.clicks)
+  } else {
+    decay2(0,0,2,0);
+    decay2(0, 0, -32,Math.PI + Mouse.clicks + 1)
+  }
+
+  if ( (Mouse.x <= 20 && Mouse.y <= 20)  /*top left*/ ||
+   (Mouse.x >= cw-20 && Mouse.y <= 20)  /*top right*/ ||
+   (Mouse.x >= cw-20 && Mouse.y >= ch-20)  /*bottom right*/ ||
+   (Mouse.x <= 20 && Mouse.y >= ch-20)  /* bottom left*/ ) {
+    clearCanvas(0.1);
+  }
+
+  if (Mouse.x !== -1 && Mouse.y !== -1) {
+    linee(12);
+  }
+}
+animloop();
+
+</script>
